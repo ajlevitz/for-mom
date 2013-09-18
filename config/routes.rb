@@ -1,4 +1,9 @@
 ForMom::Application.routes.draw do
+  get "prompts/index"
+
+  # get all the RESTful api stuff
+  resources :prompts
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
