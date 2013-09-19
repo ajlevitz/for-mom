@@ -7,10 +7,9 @@ class EssaysController < ApplicationController
   end
 
   def create
-    @essay = Essay.new(essay_params)
-    @essay.save
-
-    redirect_to @essay
+    @prompt = Prompt.find(params[:prompt_id])
+    @essay = @prompt.essays.create(params[:essay].permit(:submitter, :comments))
+    redirect_to prompt_path(@prompt)
   end
 
   def show

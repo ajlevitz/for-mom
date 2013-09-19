@@ -7,5 +7,7 @@ class CreateEssays < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :essays, :prompt_id
   end
 end

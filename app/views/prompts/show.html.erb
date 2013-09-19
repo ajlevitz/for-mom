@@ -1,3 +1,29 @@
-<p>show</p>
+<p>Prompt: <%= @prompt.question %></p>
 
-<%= @prompt.question %>
+<p>Essay responses</p>
+<% @prompt.essays.each do |essay| %>
+  <p>
+    <strong>Submitter:</strong>
+    <%= essay.submitter %>
+  </p>
+
+  <p>
+    <strong>Comments:</strong>
+    <%= essay.comments %>
+  </p>
+<% end %>
+
+<p>Add a new essay response:</p>
+<%= form_for([@prompt, @prompt.essays.build]) do |f| %>
+  <p>
+    <%= f.label :submitter %><br />
+    <%= f.text_field :submitter %>
+  </p>
+  <p>
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
