@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918233501) do
+ActiveRecord::Schema.define(version: 20130918235938) do
+
+  create_table "essays", force: true do |t|
+    t.string   "submitter"
+    t.text     "comments"
+    t.integer  "prompt_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "essays", ["prompt_id"], name: "index_essays_on_prompt_id"
 
   create_table "prompts", force: true do |t|
     t.text     "question"

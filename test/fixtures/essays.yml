@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  submitter: MyString
+  comments: MyText
+  prompt_id: 
+
+two:
+  submitter: MyString
+  comments: MyText
+  prompt_id: 
